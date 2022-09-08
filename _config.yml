@@ -20,12 +20,13 @@ author: Amirul Islam
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  Home: "https://islamamirul.wordpress.com/"  
   Publications:
     - International Journals: "int_j"
     - International Conferences: "int_c"    
   Education: "education"
-  Home: "https://islamamirul.wordpress.com/"
+  Contact Me: "contact"
+  About Me: "aboutme"
 
 ################
 # --- Logo --- #
