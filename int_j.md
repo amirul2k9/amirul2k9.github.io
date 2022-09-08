@@ -1,6 +1,6 @@
 ---
 layout: page
-title: International Journals
+## title: International Journals
 ---
 - [J10] **Amirul Islam**, N. Thomos, and L. Musavian, "Multi-agent deep reinforcement learning for spectral efficiency optimization in vehicular optical camera communications," _IEEE Trans. Mob. Comput._, Dec. 2021. (Submitted).
 - [J9] **Amirul Islam**, M. T. Hossan, and Y. M. Jang, "[Convolutional neural network scheme-based optical camera communication system for intelligent internet of vehicles](https://journals.sagepub.com/doi/10.1177/1550147718770153)," _International Journal of Distributed Sensor Networks_, vol. 14, no. 4, pp. 1-19, Apr. 2018.
