@@ -1,4 +1,7 @@
-
+---
+layout: page
+title: Career
+---
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
