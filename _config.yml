@@ -30,6 +30,7 @@ navbar-links:
     - Domestic Conferences: "dom_c"
     - IEEE Standardization Contributions: "standardization"
   Education: "education"
+  Test: "index2"
   # Contact Me: "contact"
   # About Me: "aboutme"
 
