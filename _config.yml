@@ -23,8 +23,8 @@ navbar-links:
   About Me: "aboutme"
   Publications:
     - International Journals: "int_j"
-    - International Conferences: "https://islamamirul.wordpress.com/international-conferences/"    
-  Education: "https://islamamirul.wordpress.com/education/"
+    - International Conferences: "int_c"    
+  Education: "education"
   Home: "https://islamamirul.wordpress.com/"
 
 ################
