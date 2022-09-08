@@ -1,8 +1,6 @@
 ---
-layout = page
-title = ML
-subtitle = none
+layout: page
 ---
 
-# Machine learning for communication
-# Multi-agent systems
+- # Machine learning for communication
+- # Multi-agent systems
