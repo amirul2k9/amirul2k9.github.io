@@ -20,7 +20,9 @@ author: Amirul Islam
 ###############################################
 
 navbar-links:
-  Home: "index"  
+  Home: "index" 
+  Career: "career"
+  Research: "research"
   Publications:
     - International Journals: "int_j"
     - International Conferences: "int_c"    
