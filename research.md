@@ -1,1 +1,5 @@
-## Machine learning for communication
+---
+layout = page
+---
+
+# Machine learning for communication
