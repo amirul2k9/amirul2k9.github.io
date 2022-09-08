@@ -22,9 +22,10 @@ author: Amirul Islam
 navbar-links:
   About Me: "aboutme"
   Publications:
-    - INTERNATIONAL JOURNALS: "https://islamamirul.wordpress.com/international-2/"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://islamamirul.wordpress.com/"
+    - International Journals: "https://islamamirul.wordpress.com/international-2/"
+    - International Conferences: "https://islamamirul.wordpress.com/international-conferences/"    
+  Education: "https://islamamirul.wordpress.com/education/"
+  Home: "https://islamamirul.wordpress.com/"
 
 ################
 # --- Logo --- #
