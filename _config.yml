@@ -25,10 +25,13 @@ navbar-links:
   Research: "research"
   Publications:
     - International Journals: "int_j"
-    - International Conferences: "int_c"    
+    - International Conferences: "int_c"
+    - Domestic Journals: "dom_j"
+    - Domestic Conferences: "dom_c"
+    - IEEE Standardization Contributions: "standardization"
   Education: "education"
-  Contact Me: "contact"
-  About Me: "aboutme"
+  # Contact Me: "contact"
+  # About Me: "aboutme"
 
 ################
 # --- Logo --- #
