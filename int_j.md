@@ -2,13 +2,22 @@
 layout: page
 title: International Journals
 ---
- J10. **Amirul Islam**, N. Thomos, and L. Musavian, "Multi-agent deep reinforcement learning for spectral efficiency optimization in vehicular optical camera communications," _IEEE Trans. Mob. Comput._, Dec. 2021. (Submitted).   
+ J10. **Amirul Islam**, N. Thomos, and L. Musavian, "Multi-agent deep reinforcement learning for spectral efficiency optimization in vehicular optical camera communications," _IEEE Trans. Mob. Comput._, Dec. 2021. (Submitted).  
+ 
 J9. **Amirul Islam**, M. T. Hossan, and Y. M. Jang, "[Convolutional neural network scheme-based optical camera communication system for intelligent internet of vehicles](https://journals.sagepub.com/doi/10.1177/1550147718770153)," _International Journal of Distributed Sensor Networks_, vol. 14, no. 4, pp. 1-19, Apr. 2018.  
-J8. **Amirul Islam**, M. T. Hossan, T. Nguyen, and Y. M. Jang, "[Adaptive spatial-temporal resolution optical vehicular communication system using image sensor](https://journals.sagepub.com/doi/full/10.1177/1550147717743698)," _International Journal of Distributed Sensor Networks_, vol. 13, no. 11, pp. 1-15, Nov. 2017.  
+
+J8. **Amirul Islam**, M. T. Hossan, T. Nguyen, and Y. M. Jang, "[Adaptive spatial-temporal resolution optical vehicular communication system using image sensor](https://journals.sagepub.com/doi/full/10.1177/1550147717743698)," _International Journal of Distributed Sensor Networks_, vol. 13, no. 11, pp. 1-15, Nov. 2017. 
+
 J7. M. Z. Chowdhury, M. T. Hossan, **Amirul Islam**, and Y. M. Jang, "[A comparative survey of pptical wireless technologies: Architectures and applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8259465)," _IEEE Access_, vol. 6, no. 1, pp. 9819-9840, Jan. 2018.  
+
 J6. M. T. Hossan, M. Z. Chowdhury, **Amirul Islam**, and Y. M. Jang, "[A novel indoor mobile localization system based on optical camera communication](https://www.hindawi.com/journals/wcmc/2018/9353428/)," _Wireless Communications and Mobile Computing_, vol. 2018, Article ID 9353428, pp. 1-17, Feb. 2018.  
+
 J5. T. Nguyen, **Amirul Islam**, T. Yamazato, and Y. M. Jang, "[Technical issues on IEEE 802.15.7m task group and image sensor communication technologies](https://ieeexplore.ieee.org/document/8291141)," _IEEE Communications Magazine_, vol. 56, no. 2, pp. 213-218, Feb. 2017.  
+
 J4. T. Nguyen, **Amirul Islam**, M. T. Hossan, and Y. M. Jang, "[Current status and performance analysis of optical camera communication technologies for 5G networks](https://ieeexplore.ieee.org/document/7890427)," _IEEE Access_, vol. 5, no. 1, pp. 4574 - 4594, Mar. 2017.  
+
 J3. T. Nguyen, **Amirul Islam**, and Y. M. Jang, "[Region-of-interest signaling vehicular system using optical camera communications](https://ieeexplore.ieee.org/document/7801077)," _IEEE Photonics Journal_, vol. 9, no. 1, pp. 1-20, Feb. 2017.  
+
 J2. M. A. Hossain, **Amirul Islam**, N. T. Le, H. W. Lee, Y. T. Lee, and Y. M. Jang, "[Performance analysis of smart digital signage system based on software-defined IoT and invisible image sensor communication](https://journals.sagepub.com/doi/10.1177/1550147716657926)," _International Journal of Distributed Sensor Networks_,  vol. 12, no. 7, pp. 1–14, July 2016.  
+
 J1. N. T. Le, M. A. Hossain, **Amirul Islam**, D. Y. Kim, Y. J. Choi, and Y. M. Jang, "[Survey of promising technologies for 5G networks](https://www.hindawi.com/journals/misy/2016/2676589/)," _Mobile Information Systems_, vol. 2016, Article ID 2676589, 25 pages, 2016.  
