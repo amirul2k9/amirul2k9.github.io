@@ -20,7 +20,7 @@ author: Amirul Islam
 ###############################################
 
 navbar-links:
-  Home: "https://islamamirul.wordpress.com/"  
+  Home: "index"  
   Publications:
     - International Journals: "int_j"
     - International Conferences: "int_c"    
