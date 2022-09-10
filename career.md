@@ -16,15 +16,16 @@ Supervisor: [Prof Leila Musavian](https://www.essex.ac.uk/people/musav85708/leil
 
 
 #### Graduate Research Student (Sep. 2015 - Sep. 2017)
-  [Wireless Communications and Artificial Intelligence Lab.](http://wireless.kookmin.ac.kr/#)  
-  Department of Electronics Engineering,  
-  Kookmin University, Seoul, South Korea.  
-  Supervisor: Prof Yeong Min Jang
+[Wireless Communications and Artificial Intelligence Lab.](http://wireless.kookmin.ac.kr/#)  
+Department of Electronics Engineering,  
+Kookmin University, Seoul, South Korea.  
+Supervisor: Prof Yeong Min Jang
   
 ## University of Essex, UK (January 2020 - May 2022)
 ### Assistant Lecturer
 #### 2021 -2022 (Spring)
 * Languages and Compilers 
+
 ### Graduate Laboratory Assistant
 #### 2021 -2022 (Autumn)
 * Neural Networks and Deep Learning (MSc course)
@@ -32,6 +33,7 @@ Supervisor: [Prof Leila Musavian](https://www.essex.ac.uk/people/musav85708/leil
 * Languages and Compilers 
 * Digital Electronic Systems
 * Network Fundamentals (CISCO)
+
 #### 2021 -2022 (Spring)
 * Large Scale Software Systems and Extreme Programming (Python, Java, C)
 * Introduction to Programming (Python)
@@ -40,6 +42,7 @@ Supervisor: [Prof Leila Musavian](https://www.essex.ac.uk/people/musav85708/leil
 * Introduction to Databases
 * Mathematics for Computing
 * Fundamentals of Digital Systems
+
 #### 2019 -2020 (Spring)
 * Digital Electronic Systems
 
