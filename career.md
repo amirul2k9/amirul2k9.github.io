@@ -3,6 +3,11 @@ layout: page
 title: Career
 ---
 
+### Research Experiences
+#### Post-Doctoral Researcher (May 2022 - Continue)
+[Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/)  
+Oxford Brookes University, United Kingdom.
+
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":4} -->
@@ -48,7 +53,7 @@ title: Career
 <!-- /wp:columns -->
 
 
-## University of Essex, UK (January 2020 - continue)
+## University of Essex, UK (January 2020 - May 2022)
 ### Assistant Lecturer
 #### 2021 -2022 (Spring)
 * Languages and Compilers 
@@ -76,5 +81,5 @@ title: Career
 #### Lecturer in Electrical and Electronics Engineering (Mar. 2018 – May 2018)
 
 ### **Kookmin University, South Korea.** 
-#### Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)
-#### Fundamental Electronics Engineering Lab. I
+Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)
+* Fundamental Electronics Engineering Lab. I
