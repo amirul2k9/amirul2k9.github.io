@@ -21,33 +21,6 @@ Supervisor: [Prof Leila Musavian](https://www.essex.ac.uk/people/musav85708/leil
   Kookmin University, Seoul, South Korea.  
   Supervisor: Prof Yeong Min Jang
   
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":4} -->
-<h4>Professional</h4>
-<!-- /wp:heading -->
-
-<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cd8;" class="has-inline-color">Assistant Lecturer (GTA)</mark></strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cd8;" class="has-inline-color"> (Jan. 2022 - May 2022)</mark><br>School of CSEE<br>University of Essex, United Kingdom.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><span style="color:#0000ff;"><strong>Graduate Laboratory Assistant</strong> (Jan. 2020 - May 2022)</span><br><span style="color:#000000;">School of Computer Science and Electronic Engineering<br>University of Essex, United Kingdom.</span></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><span style="color:#0000ff;"><strong>Lecturer</strong>&nbsp;(Mar. 2018 - May 2018)</span><br><span style="color:#000000;">Department of Electrical and Electronics Engineering<br>Varendra University, Rajshahi, Bangladesh.</span></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><span style="color:#0000ff;"><strong>Teaching Assistant</strong>&nbsp;(Mar. 2017 - Sep. 2017)</span><br><span style="color:#000000;">Subject: Fundamental Electronics Engineering Lab. I<br>Department of Electronics Engineering<br>Kookmin University, Seoul, South Korea.</span></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
-
-
 ## University of Essex, UK (January 2020 - May 2022)
 ### Assistant Lecturer
 #### 2021 -2022 (Spring)
