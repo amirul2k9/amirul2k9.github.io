@@ -53,6 +53,6 @@ Supervisor: Prof Yeong Min Jang
 #### Varendra University, Rajshahi, Bangladesh. 
 ##### Lecturer in Electrical and Electronics Engineering (Mar. 2018 – May 2018)
 
-#### **Kookmin University, South Korea.** 
+#### Kookmin University, South Korea.
 ##### Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)  
 * Fundamental Electronics Engineering Lab. I
