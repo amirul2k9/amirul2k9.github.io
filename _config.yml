@@ -48,10 +48,10 @@ round-avatar: true
 social-network-links:
   email: "amirul.0903118@gmail.com"
   # rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  github: amirul2k9
-  twitter: Amirul0191
   linkedin: islam-amirul/
   google-scholar: citations?user=uX5PG0AAAAAJ&hl=en
+  github: amirul2k9
+  twitter: Amirul0191
   ORCID: my-orcid?orcid=0000-0003-0014-7267
 
 # If you want your website to generate an RSS feed, provide a description
