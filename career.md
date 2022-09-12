@@ -21,20 +21,23 @@ Department of Electronics Engineering,
 Kookmin University, Seoul, South Korea.  
 Supervisor: Prof Yeong Min Jang
   
-## University of Essex, UK (January 2020 - May 2022)
-### Assistant Lecturer
-#### 2021 -2022 (Spring)
-* Languages and Compilers 
+  
+### Teaching Experiences
 
-### Graduate Laboratory Assistant
-#### 2021 -2022 (Autumn)
+#### University of Essex, UK (January 2020 - May 2022)
+##### Assistant Lecturer
+###### 2021 -2022 (Spring)
+      * Languages and Compilers 
+
+##### Graduate Laboratory Assistant
+###### 2021 -2022 (Autumn)
 * Neural Networks and Deep Learning (MSc course)
 * Mathematics for Computing
 * Languages and Compilers 
 * Digital Electronic Systems
 * Network Fundamentals (CISCO)
 
-#### 2021 -2022 (Spring)
+###### 2021 -2022 (Spring)
 * Large Scale Software Systems and Extreme Programming (Python, Java, C)
 * Introduction to Programming (Python)
 * Telecommunication Principles
@@ -43,14 +46,13 @@ Supervisor: Prof Yeong Min Jang
 * Mathematics for Computing
 * Fundamentals of Digital Systems
 
-#### 2019 -2020 (Spring)
-* Digital Electronic Systems
+###### 2019 -2020 (Spring)
+    * Digital Electronic Systems
 
 
-### Varendra University, Rajshahi, Bangladesh. 
+#### Varendra University, Rajshahi, Bangladesh. 
+##### Lecturer in Electrical and Electronics Engineering (Mar. 2018 – May 2018)
 
-#### Lecturer in Electrical and Electronics Engineering (Mar. 2018 – May 2018)
-
-### **Kookmin University, South Korea.** 
-Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)
-* Fundamental Electronics Engineering Lab. I
+#### **Kookmin University, South Korea.** 
+##### Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)
+    * Fundamental Electronics Engineering Lab. I
