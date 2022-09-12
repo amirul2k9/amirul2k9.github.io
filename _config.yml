@@ -47,32 +47,18 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "amirul.0903118@gmail.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+ # rss: true  # remove this line if you don't want to show an RSS link at the bottom
  # facebook: deanattali
   github: amirul2k9
   twitter: Amirul0191
-#  patreon: DeanAttali
 #  youtube: c/daattali
-#  medium: yourname
-#  reddit: yourname
-  linkedin: islam-amirul/
-#  xing: yourname
+   linkedin: islam-amirul/
 #  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
-#  spotify: yourname
 #  telephone: +14159998888
-#  steam: deanat78
-#  twitch: yourname
-#  yelp: yourname
-#  telegram: yourname
-#  calendly: yourname
-#  mastodon: instance.url/@username
   ORCID: my-orcid?orcid=0000-0003-0014-7267
   google-scholar: citations?user=uX5PG0AAAAAJ&hl=en
 #  discord: invite/invite_code or users/userid 
 #  kaggle: yourname
-#  hackerrank: yourname
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
