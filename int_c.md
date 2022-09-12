@@ -3,7 +3,7 @@ layout: page
 title: null
 subtitle: International Conferences
 ---
-
+### International Conferences
 
 <span style="font-family:sans-serif; font-size:.8em;"> [C13] **Amirul Islam**, N. Thomos, and L. Musavian, “[Achieving uRLLC with Machine Learning Based Vehicular OCC](),” Accepted for publication at _2022 IEEE Global Communications Conference (GLOBECOM)_, Rio de Janeiro, Brazil, Dec. 2022.</span>  
 <span style="font-family:sans-serif; font-size:.8em;"> [C12] **Amirul Islam**, L. Musavian, and N. Thomos, “[Multi-agent deep reinforcement learning in vehicular OCC](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9860869),” in Proc. of _2022 IEEE 95th Vehicular Technology Conference (VTC2022-Spring)_ Helsinki, Finland, Jun. 2022, pp. 1-6.</span>  
