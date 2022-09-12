@@ -1,6 +1,5 @@
 ---
 layout: page
-title: null
 subtitle: International Conferences
 ---
 ### International Conferences
