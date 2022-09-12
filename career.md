@@ -27,7 +27,7 @@ Supervisor: Prof Yeong Min Jang
 #### University of Essex, UK (January 2020 - May 2022)
 ##### Assistant Lecturer
 ###### 2021 -2022 (Spring)
-      * Languages and Compilers 
+* Languages and Compilers 
 
 ##### Graduate Laboratory Assistant
 ###### 2021 -2022 (Autumn)
@@ -47,12 +47,12 @@ Supervisor: Prof Yeong Min Jang
 * Fundamentals of Digital Systems
 
 ###### 2019 -2020 (Spring)
-    * Digital Electronic Systems
+* Digital Electronic Systems
 
 
 #### Varendra University, Rajshahi, Bangladesh. 
 ##### Lecturer in Electrical and Electronics Engineering (Mar. 2018 – May 2018)
 
 #### **Kookmin University, South Korea.** 
-##### Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)
-    * Fundamental Electronics Engineering Lab. I
+##### Graduate Laboratory Assistant (Mar. 2017 – Sep. 2017)  
+* Fundamental Electronics Engineering Lab. I
