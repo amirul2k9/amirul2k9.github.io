@@ -3,8 +3,11 @@ layout: page
 title: International Journals 
 ---
 <span style="font-family:sans-serif; font-size:.8em;"> J12. **Amirul Islam**, N. Thomos, and L. Musavian, "5G NR Codes and Modulation Deep-RL Optimization for uRLLC in Vehicular OCC," Accepted for publication in _IEEE Trans. on Intelligent Transportation Systems_, Aug. 2024.  </span> 
+
 <span style="font-family:sans-serif; font-size:.8em;"> J11. F. Ahmmed, A. Rahman, **Amirul Islam**, A. Alaly, S. Mehnaj, P. Saha, and T. Hossain, "[Arduino-Controlled Multi-Function Robot with Bluetooth and nRF24L01+ Communication](https://pubs2.ascee.org/index.php/IJRCS/article/view/1517/pdf)," _International Journal of Robotics and Control Systems_, vol. 4, no. 3, pp. 1353-1381, Aug. 2024.  </span> 
+
 <span style="font-family:sans-serif; font-size:.8em;"> J10. **Amirul Islam**, N. Thomos, and L. Musavian, "[Multi-agent deep reinforcement learning for spectral efficiency optimization in vehicular optical camera communications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10130324)," _IEEE Trans. Mob. Comput._, vol. 23, no. 5, pp. 3666-3679, May 2024.  </span>   
+
 <span style="font-family:sans-serif; font-size:.8em;"> J9. **Amirul Islam**, M. T. Hossan, and Y. M. Jang, "[Convolutional neural network scheme-based optical camera communication system for intelligent internet of vehicles](https://journals.sagepub.com/doi/10.1177/1550147718770153)," _International Journal of Distributed Sensor Networks_, vol. 14, no. 4, pp. 1-19, Apr. 2018.  </span>  
 <span style="font-family:sans-serif; font-size:.8em;"> J8. **Amirul Islam**, M. T. Hossan, T. Nguyen, and Y. M. Jang, "[Adaptive spatial-temporal resolution optical vehicular communication system using image sensor](https://journals.sagepub.com/doi/full/10.1177/1550147717743698)," _International Journal of Distributed Sensor Networks_, vol. 13, no. 11, pp. 1-15, Nov. 2017. </span>   
 <span style="font-family:sans-serif; font-size:.8em;"> J7. M. Z. Chowdhury, M. T. Hossan, **Amirul Islam**, and Y. M. Jang, "[A comparative survey of pptical wireless technologies: Architectures and applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8259465)," _IEEE Access_, vol. 6, no. 1, pp. 9819-9840, Jan. 2018.  </span>   
