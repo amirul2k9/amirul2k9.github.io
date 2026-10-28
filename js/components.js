@@ -55,8 +55,8 @@ function mountHeader() {
   const nav = [
     ["index", "index.html", "Home"],
     ["research", "research.html", "Research"],
+    ["publications", "publications.html", "Publications"],     
     ["projects", "projects.html", "Projects"],
-    ["publications", "publications.html", "Publications"],
     ["cv", "cv.html", "Experience"],
     ["contact", "contact.html", "Contact"]
   ];
