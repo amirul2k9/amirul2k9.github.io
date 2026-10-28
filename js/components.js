@@ -96,8 +96,8 @@ function mountFooter() {
         <div class="foot__col">
           <h4>Explore</h4>
           <a href="research.html">Research</a>
-          <a href="projects.html">Projects</a>
           <a href="publications.html">Publications</a>
+          <a href="projects.html">Projects</a>
           <a href="cv.html">Experience &amp; teaching</a>
           <a href="${PROFILE.lab.url}" target="_blank" rel="noopener">${PROFILE.lab.short} research cluster</a>
         </div>
