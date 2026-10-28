@@ -83,9 +83,9 @@ window.SITE_JS = (function () {
     const f = { type: "all", only: "all", q: "" };
     let page = 1;
 
-    // allow deep links like publications.html#standard or #journal
+    // allow deep links like publications.html#journal or #conference
     const hash = location.hash.slice(1);
-    if (["journal", "conference", "standard"].includes(hash)) f.type = hash;
+    if (["journal", "conference"].includes(hash)) f.type = hash;
 
     const matches = row =>
       (f.type === "all" || row.dataset.type === f.type) &&

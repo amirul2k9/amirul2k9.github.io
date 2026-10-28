@@ -8,7 +8,8 @@
      • New job / role   -> add to PROFILE.experience
      • New course       -> add to TEACHING
      • New research area-> add to RESEARCH
-     • New project      -> add to PROJECTS
+     • New project      -> add to PROJECTS   (projects.html)
+     • IEEE 802 doc     -> add to STANDARDS  (Experience page)
      • Update numbers   -> edit PROFILE.stats (citations etc.)
    ========================================================================== */
 
@@ -125,18 +126,63 @@ const RESEARCH = [
 ];
 
 /* ===========================================================================
-   PROJECTS
+   PROJECTS   (shown on projects.html — newest / ongoing first)
+   ---------------------------------------------------------------------------
+   status : "Ongoing" | "Completed" | "Planned"
+   icon   : share | wave | signal | camera | brain | bolt | car | grid | orbit | heart | leaf
+   image  : optional, e.g. "assets/img/projects/my-project.jpg" (wide image ~1200x600)
+   funding, team, links : optional — delete any line you don't need
+   links  : any of { paper, code, website, slides, video }
+
+   ⚠ The first three projects marked  // DEMO  are placeholders written from
+     your research areas. Edit their text (or delete them) when you have the
+     real details.
+
+   Template:
+   { title: "", status: "Ongoing", role: "Principal Investigator", org: "BRAC University",
+     period: "2026 – Present", icon: "brain", funding: "", team: "",
+     tags: ["", ""], desc: "", links: { paper: "", code: "" } },
    ========================================================================= */
 const PROJECTS = [
-  { title: "MAESTRO Jr. — Multimodal Cognitive Workload Assessment", role: "Project Lead", org: "Visual AI Lab, Oxford Brookes University, UK", period: "2022 – 2023", icon: "heart",
+  // DEMO — replace with real details
+  { title: "Embedded Edge AI for Medical Image Analysis", status: "Ongoing", role: "Principal Investigator",
+    org: "Dept. of EEE, BRAC University", period: "2025 – Present", icon: "heart",
+    team: "Undergraduate thesis group, BRAC University",
+    tags: ["Edge AI", "Medical Imaging", "Model Compression"],
+    desc: "Lightweight deep-learning models that run on low-power embedded hardware for on-device medical image analysis, studying the accuracy–latency–energy trade-off for point-of-care diagnosis.",
+    links: { paper: "", code: "" } },
+
+  // DEMO — replace with real details
+  { title: "Learning-Driven Resource Allocation for 6G Links", status: "Ongoing", role: "Principal Investigator",
+    org: "C2NS, BRAC University", period: "2025 – Present", icon: "signal",
+    team: "Graduate student researchers, C2NS",
+    tags: ["6G", "Deep RL", "Resource Allocation"],
+    desc: "Deep and multi-agent reinforcement learning for power, rate and link allocation in next-generation wireless and optical networks under strict reliability and latency constraints.",
+    links: { paper: "", code: "" } },
+
+  // DEMO — replace with real details
+  { title: "Explainable AI for Renewable Energy Systems", status: "Ongoing", role: "Co-Investigator",
+    org: "BRAC University", period: "2025 – Present", icon: "leaf",
+    tags: ["Explainable ML", "Fault Diagnosis", "Load Forecasting"],
+    desc: "Interpretable machine-learning pipelines for wind-turbine fault severity classification, short-term load forecasting and DC-microgrid protection.",
+    links: { paper: "https://doi.org/10.1016/j.ecmx.2026.101621" } },
+
+  { title: "MAESTRO Jr. — Multimodal Cognitive Workload Assessment", status: "Completed", role: "Project Lead",
+    org: "Visual AI Lab, Oxford Brookes University, UK", period: "2022 – 2023", icon: "heart",
     tags: ["Medical Robotics", "Multimodal ML", "Surgery"],
     desc: "Led a project assessing surgeons' cognitive workload from multimodal signals in surgical environments, bridging medical robotics and machine learning." },
-  { title: "Deep-RL Ultra-Reliable Low-Latency Vehicular OCC", role: "Doctoral Research", org: "University of Essex, UK", period: "2018 – 2022", icon: "brain",
+
+  { title: "Deep-RL Ultra-Reliable Low-Latency Vehicular OCC", status: "Completed", role: "Doctoral Research",
+    org: "University of Essex, UK", period: "2018 – 2022", icon: "brain",
     tags: ["Deep RL", "uRLLC", "Vehicular OCC"],
-    desc: "Deep and multi-agent reinforcement learning to jointly optimise codes, modulation and spectral efficiency for ultra-reliable, low-latency vehicular optical camera communication." },
-  { title: "Optical Camera Communication for the Internet of Vehicles", role: "Graduate Researcher", org: "Kookmin University, South Korea", period: "2015 – 2017", icon: "camera",
+    desc: "Deep and multi-agent reinforcement learning to jointly optimise codes, modulation and spectral efficiency for ultra-reliable, low-latency vehicular optical camera communication.",
+    links: { paper: "https://doi.org/10.1109/TCOMM.2024.3478108" } },
+
+  { title: "Optical Camera Communication for the Internet of Vehicles", status: "Completed", role: "Graduate Researcher",
+    org: "Kookmin University, South Korea", period: "2015 – 2017", icon: "camera",
     tags: ["OCC", "IoV", "IEEE 802.15"],
-    desc: "Convolutional-neural-network and adaptive image-sensor schemes for intelligent vehicular optical camera communication and indoor localisation, with contributions to IEEE 802.15 interest groups." }
+    desc: "Convolutional-neural-network and adaptive image-sensor schemes for intelligent vehicular optical camera communication and indoor localisation, with contributions to IEEE 802.15 interest groups.",
+    links: { paper: "https://doi.org/10.1177/1550147718770153" } }
 ];
 
 /* ===========================================================================
@@ -156,7 +202,7 @@ const TEACHING = [
 
 /* ===========================================================================
    PUBLICATIONS
-   type:     "journal" | "conference" | "standard"
+   type:     "journal" | "conference"
    status:   optional — "accepted", "early access", "preprint"
    quartile: optional — "Q1".."Q4"
    domestic: optional — true for Korean domestic venues (KICS / JCCI)
@@ -213,20 +259,26 @@ const PUBLICATIONS = [
   { year: 2016, month: "Apr", type: "conference", domestic: true, authors: "M. A. Hossain, A. Islam, N. T. Le, T. Nguyen, C. H. Hong, Y. M. Jang", title: "Opportunities from Invisible Watermarking for Device-to-Device Communication", venue: "26th Joint Conference on Communications and Information (JCCI)", location: "South Korea" },
   { year: 2016, month: "Apr", type: "conference", domestic: true, authors: "M. A. Hossain, A. Islam, C. H. Hong, N. T. Le, T. Nguyen, Y. M. Jang", title: "Similarity Analysis for Invisibility in Image Sensor Communication", venue: "26th Joint Conference on Communications and Information (JCCI)", location: "South Korea" },
   { year: 2016, month: "Jan", type: "conference", domestic: true, authors: "A. Islam, M. A. Hossain, Y. M. Jang", title: "SVM-based Positioning Approach in Image Sensor Network", venue: "KICS Winter Conference", location: "South Korea" },
-  { year: 2015, month: "Dec", type: "conference", authors: "A. Islam, M. A. Hossain, Y. M. Jang", title: "Software Defined Networking Enabled Digital Signage for Disaster Management", venue: "KICS Korea and Southeast Asia ICT International Workshop", pages: "1-2", location: "Siem Reap, Cambodia" },
+  { year: 2015, month: "Dec", type: "conference", authors: "A. Islam, M. A. Hossain, Y. M. Jang", title: "Software Defined Networking Enabled Digital Signage for Disaster Management", venue: "KICS Korea and Southeast Asia ICT International Workshop", pages: "1-2", location: "Siem Reap, Cambodia" }
+];
 
-  /* ---- IEEE 802 standardization contributions ---- */
-  { year: 2017, month: "Jul", type: "standard", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Future Applications of OWC and OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0385-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0385-00-0vat-future-applications-of-owc-and-occ.pptx" },
-  { year: 2017, month: "Jul", type: "standard", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Long Range OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0386-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0386-00-0vat-long-range-occ.pptx" },
-  { year: 2017, month: "Jul", type: "standard", authors: "M. T. Hossan, T. Nguyen, A. Islam, Y. M. Jang", title: "S2-PSK for V2V Communication", venue: "IEEE 802.15 IG VAT", number: "15-17-0387-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0387-00-0vat-s2-psk-for-v2v-communication.pptx" },
-  { year: 2017, month: "Jul", type: "standard", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues (Rev. 1)", venue: "IEEE 802.15 IG VAT", number: "15-17-0384-01", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0384-01-0vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
-  { year: 2017, month: "Jul", type: "standard", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues", venue: "IEEE 802.15 IG VAT", number: "15-17-0384-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0384-00-0vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
-  { year: 2017, month: "May", type: "standard", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Interference Characterization of Artificial Light Sources for Long Range OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0276-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0276-00-0vat-interference-characterization-of-artificial-light-sources-for-long-range-occ.pptx" },
-  { year: 2017, month: "May", type: "standard", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues", venue: "IEEE 802.15 IG VAT", number: "15-17-0275-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0275-00-0vat-ieee-802-15-ig-vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
-  { year: 2017, month: "Jan", type: "standard", authors: "A. Islam, Y. M. Jang", title: "Use Cases and Functional Requirements for IEEE 802.15 Vehicular Assistant Technology (VAT) IG", venue: "IEEE 802.15 IG VAT", number: "15-17-0061-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0061-00-0vat-use-cases-and-functional-requirements-for-ieee-802-15-vehicular-assistant-technology-vat-ig.pptx" },
-  { year: 2016, month: "Nov", type: "standard", authors: "A. Islam, M. A. Hossain, Y. M. Jang", title: "Kookmin University Response to Call for Interests (CFI) of IEEE 802 IG-DEP", venue: "IEEE 802 IG-DEP", number: "15-15-0895-00", url: "https://mentor.ieee.org/802.15/dcn/15/15-15-0895-00-0dep-kookmin-university-response-to-call-for-interests-cfi-of-ieee-802-ig-dep.pptx" },
-  { year: 2016, month: "Nov", type: "standard", authors: "Y. M. Jang, A. Islam", title: "Opening Long Range Automotive OWC Interest Group (Rev. 1)", venue: "IEEE 802.15 WNG", number: "15-16-0793-01", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0793-01-wng0-opening-long-range-automotive-owc-interest-group.pdf" },
-  { year: 2016, month: "Nov", type: "standard", authors: "Y. M. Jang, A. Islam", title: "Opening Long Range Automotive OWC Interest Group", venue: "IEEE 802.15 WNG", number: "15-16-0793-00", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0793-00-wng0-opening-long-range-automotive-owc-interest-group.pdf" },
-  { year: 2016, month: "Jan", type: "standard", authors: "Y. M. Jang, T. Nguyen, N. T. Le, M. S. Ifthekhar, M. A. Hossain, C. H. Hong, A. Islam", title: "General Architecture of Kookmin University PHY and MAC Multiple-Proposal for Image Sensor Communication (Rev. 1)", venue: "IEEE 802.15.7a", number: "15-16-0011-01", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0011-01-007a-general-architecture-of-kookmin-university-phy-and-mac-multiple-proposal-for-image-sensor-communication.pptx" },
-  { year: 2016, month: "Jan", type: "standard", authors: "Y. M. Jang, T. Nguyen, N. T. Le, M. S. Ifthekhar, M. A. Hossain, C. H. Hong, A. Islam", title: "General Architecture of Kookmin University PHY and MAC Multiple-Proposal for Image Sensor Communication", venue: "IEEE 802.15.7a", number: "15-16-0011-00", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0011-00-007a-general-architecture-of-kookmin-university-phy-and-mac-multiple-proposal-for-image-sensor-communication.pptx" }
+/* ===========================================================================
+   STANDARDIZATION CONTRIBUTIONS   (shown on the Experience page, cv.html)
+   Template:
+   { year: 2017, month: "Jul", authors: "A. Islam, ...", title: "...", venue: "IEEE 802.15 IG VAT", number: "15-17-0000-00", url: "https://mentor.ieee.org/..." },
+   ========================================================================= */
+const STANDARDS = [
+  { year: 2017, month: "Jul", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Future Applications of OWC and OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0385-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0385-00-0vat-future-applications-of-owc-and-occ.pptx" },
+  { year: 2017, month: "Jul", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Long Range OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0386-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0386-00-0vat-long-range-occ.pptx" },
+  { year: 2017, month: "Jul", authors: "M. T. Hossan, T. Nguyen, A. Islam, Y. M. Jang", title: "S2-PSK for V2V Communication", venue: "IEEE 802.15 IG VAT", number: "15-17-0387-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0387-00-0vat-s2-psk-for-v2v-communication.pptx" },
+  { year: 2017, month: "Jul", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues (Rev. 1)", venue: "IEEE 802.15 IG VAT", number: "15-17-0384-01", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0384-01-0vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
+  { year: 2017, month: "Jul", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues", venue: "IEEE 802.15 IG VAT", number: "15-17-0384-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0384-00-0vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
+  { year: 2017, month: "May", authors: "A. Islam, M. T. Hossan, Y. M. Jang", title: "Interference Characterization of Artificial Light Sources for Long Range OCC", venue: "IEEE 802.15 IG VAT", number: "15-17-0276-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0276-00-0vat-interference-characterization-of-artificial-light-sources-for-long-range-occ.pptx" },
+  { year: 2017, month: "May", authors: "M. T. Hossan, A. Islam, Y. M. Jang", title: "Using Rear Light for Long Range OCC to Ensure Safety Issues", venue: "IEEE 802.15 IG VAT", number: "15-17-0275-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0275-00-0vat-ieee-802-15-ig-vat-using-rear-light-for-long-range-occ-to-ensure-safety-issues.pptx" },
+  { year: 2017, month: "Jan", authors: "A. Islam, Y. M. Jang", title: "Use Cases and Functional Requirements for IEEE 802.15 Vehicular Assistant Technology (VAT) IG", venue: "IEEE 802.15 IG VAT", number: "15-17-0061-00", url: "https://mentor.ieee.org/802.15/dcn/17/15-17-0061-00-0vat-use-cases-and-functional-requirements-for-ieee-802-15-vehicular-assistant-technology-vat-ig.pptx" },
+  { year: 2016, month: "Nov", authors: "A. Islam, M. A. Hossain, Y. M. Jang", title: "Kookmin University Response to Call for Interests (CFI) of IEEE 802 IG-DEP", venue: "IEEE 802 IG-DEP", number: "15-15-0895-00", url: "https://mentor.ieee.org/802.15/dcn/15/15-15-0895-00-0dep-kookmin-university-response-to-call-for-interests-cfi-of-ieee-802-ig-dep.pptx" },
+  { year: 2016, month: "Nov", authors: "Y. M. Jang, A. Islam", title: "Opening Long Range Automotive OWC Interest Group (Rev. 1)", venue: "IEEE 802.15 WNG", number: "15-16-0793-01", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0793-01-wng0-opening-long-range-automotive-owc-interest-group.pdf" },
+  { year: 2016, month: "Nov", authors: "Y. M. Jang, A. Islam", title: "Opening Long Range Automotive OWC Interest Group", venue: "IEEE 802.15 WNG", number: "15-16-0793-00", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0793-00-wng0-opening-long-range-automotive-owc-interest-group.pdf" },
+  { year: 2016, month: "Jan", authors: "Y. M. Jang, T. Nguyen, N. T. Le, M. S. Ifthekhar, M. A. Hossain, C. H. Hong, A. Islam", title: "General Architecture of Kookmin University PHY and MAC Multiple-Proposal for Image Sensor Communication (Rev. 1)", venue: "IEEE 802.15.7a", number: "15-16-0011-01", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0011-01-007a-general-architecture-of-kookmin-university-phy-and-mac-multiple-proposal-for-image-sensor-communication.pptx" },
+  { year: 2016, month: "Jan", authors: "Y. M. Jang, T. Nguyen, N. T. Le, M. S. Ifthekhar, M. A. Hossain, C. H. Hong, A. Islam", title: "General Architecture of Kookmin University PHY and MAC Multiple-Proposal for Image Sensor Communication", venue: "IEEE 802.15.7a", number: "15-16-0011-00", url: "https://mentor.ieee.org/802.15/dcn/16/15-16-0011-00-007a-general-architecture-of-kookmin-university-phy-and-mac-multiple-proposal-for-image-sensor-communication.pptx" }
 ];

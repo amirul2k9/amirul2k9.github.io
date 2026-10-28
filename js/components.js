@@ -55,6 +55,7 @@ function mountHeader() {
   const nav = [
     ["index", "index.html", "Home"],
     ["research", "research.html", "Research"],
+    ["projects", "projects.html", "Projects"],
     ["publications", "publications.html", "Publications"],
     ["cv", "cv.html", "Experience"],
     ["contact", "contact.html", "Contact"]
@@ -95,6 +96,7 @@ function mountFooter() {
         <div class="foot__col">
           <h4>Explore</h4>
           <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
           <a href="publications.html">Publications</a>
           <a href="cv.html">Experience &amp; teaching</a>
           <a href="${PROFILE.lab.url}" target="_blank" rel="noopener">${PROFILE.lab.short} research cluster</a>
@@ -115,7 +117,7 @@ function mountFooter() {
 
 /* ---- publication helpers -------------------------------------------------- */
 const MONTH_ORDER = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
-const TYPE_ORDER  = { journal: 1, conference: 2, standard: 3 };
+const TYPE_ORDER  = { journal: 1, conference: 2 };
 const sortedPubs = () => [...PUBLICATIONS].sort((a, b) =>
   (b.year - a.year) ||
   ((MONTH_ORDER[b.month] || 0) - (MONTH_ORDER[a.month] || 0)) ||
@@ -125,7 +127,7 @@ const isQ1 = p => p.type === "journal" && (p.quartile || "").toUpperCase() === "
 const pubCount = {
   journal:    () => PUBLICATIONS.filter(p => p.type === "journal").length,
   conference: () => PUBLICATIONS.filter(p => p.type === "conference").length,
-  standard:   () => PUBLICATIONS.filter(p => p.type === "standard").length,
+  standard:   () => (typeof STANDARDS !== "undefined" ? STANDARDS.length : 0),
   q1:         () => PUBLICATIONS.filter(isQ1).length,
   all:        () => PUBLICATIONS.length
 };
@@ -140,8 +142,6 @@ function pubDetails(p) {
   } else if (p.type === "conference") {
     if (p.location) parts.push(p.location);
     if (p.pages)    parts.push(`pp. ${p.pages}`);
-  } else if (p.type === "standard" && p.number) {
-    parts.push(`Doc. ${p.number}`);
   }
   parts.push(p.month ? `${p.month}. ${p.year}` : `${p.year}`);
   if (p.doi) parts.push(`DOI: <a href="https://doi.org/${p.doi}" target="_blank" rel="noopener">${p.doi}</a>`);
@@ -149,7 +149,7 @@ function pubDetails(p) {
 }
 
 function pubRow(p) {
-  const badge = { journal: "Journal", conference: "Conference", standard: "IEEE 802" }[p.type] || p.type;
+  const badge = { journal: "Journal", conference: "Conference" }[p.type] || p.type;
   const href = p.url || (p.doi ? `https://doi.org/${p.doi}` : "");
   return `
     <li class="pub reveal" data-type="${p.type}" data-year="${p.year}" data-q1="${isQ1(p)}" data-first="${p.authors.startsWith(PROFILE.authorName)}">
@@ -182,7 +182,7 @@ function renderPubStats(mountSel) {
     [pubCount.journal(), "Journals"],
     [pubCount.q1(), "Q1 journals"],
     [pubCount.conference(), "Conferences"],
-    [pubCount.standard(), "IEEE 802 docs"]
+    [pubCount.all(), "Total"]
   ];
   m.innerHTML = cells.map(([n, l]) => `<div class="pubstats__cell"><b>${n}</b><span>${l}</span></div>`).join("");
 }
@@ -212,22 +212,71 @@ function renderResearch(mountSel, limit) {
   m.innerHTML = (limit ? RESEARCH.slice(0, limit) : RESEARCH).map(researchCard).join("");
 }
 
+const LINK_LABEL = { paper: "Paper", code: "Code", website: "Website", slides: "Slides", video: "Video" };
 function projectCard(p, i) {
+  const status = (p.status || "").toLowerCase();
+  const fig = p.image
+    ? `<div class="proj__fig"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>`
+    : `<div class="proj__fig proj__fig--ph">${icon(p.icon)}<span>${(p.tags && p.tags[0]) || "Research"}</span></div>`;
+  const links = Object.keys(LINK_LABEL).filter(k => p.links && p.links[k])
+    .map(k => `<a href="${p.links[k]}" target="_blank" rel="noopener">${LINK_LABEL[k]} ↗</a>`).join("");
   return `
-    <article class="proj reveal" style="--i:${i}">
-      <div class="proj__fig proj__fig--ph">${icon(p.icon)}<span>${(p.tags && p.tags[0]) || "Research"}</span></div>
+    <article class="proj reveal" style="--i:${i % 3}" data-status="${status}">
+      ${fig}
       <div class="proj__pad">
-        <div class="proj__top"><span class="proj__role">${p.role}</span><span class="proj__period">${p.period}</span></div>
+        <div class="proj__top">
+          ${p.status ? `<span class="proj__status proj__status--${status}">${p.status}</span>` : ""}
+          <span class="proj__period">${p.period}</span>
+        </div>
         <h3>${p.title}</h3>
-        <p class="proj__org">${p.org}</p>
+        <p class="proj__org">${p.role} · ${p.org}</p>
         <p class="proj__desc">${p.desc}</p>
-        <div class="chips">${p.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>
+        ${p.funding ? `<p class="proj__meta"><b>Funding</b> ${p.funding}</p>` : ""}
+        ${p.team ? `<p class="proj__meta"><b>Team</b> ${p.team}</p>` : ""}
+        <div class="chips">${(p.tags || []).map(t => `<span class="chip">${t}</span>`).join("")}</div>
+        ${links ? `<div class="proj__links">${links}</div>` : ""}
       </div>
     </article>`;
 }
-function renderProjects(mountSel) {
+function renderProjects(mountSel, opts = {}) {
   const m = $(mountSel); if (!m) return;
-  m.innerHTML = PROJECTS.map(projectCard).join("");
+  let list = PROJECTS;
+  if (opts.status) list = list.filter(p => (p.status || "").toLowerCase() === opts.status);
+  if (opts.limit) list = list.slice(0, opts.limit);
+  m.innerHTML = list.map(projectCard).join("");
+}
+
+/* project page filter (All / Ongoing / Completed) */
+function projectFilters() {
+  const bar = $("#projFilters"), grid = $("#allProjects");
+  if (!bar || !grid) return;
+  const statuses = [...new Set(PROJECTS.map(p => (p.status || "").toLowerCase()).filter(Boolean))];
+  const label = s => s.charAt(0).toUpperCase() + s.slice(1);
+  const count = s => s === "all" ? PROJECTS.length : PROJECTS.filter(p => (p.status || "").toLowerCase() === s).length;
+  bar.innerHTML = ["all", ...statuses].map(s =>
+    `<button class="fbtn${s === "all" ? " is-on" : ""}" data-status="${s}">${s === "all" ? "All" : label(s)} <span class="fbtn__n">${count(s)}</span></button>`).join("");
+  bar.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    bar.querySelectorAll("button").forEach(x => x.classList.toggle("is-on", x === b));
+    const s = b.dataset.status;
+    grid.querySelectorAll(".proj").forEach(c => { c.style.display = (s === "all" || c.dataset.status === s) ? "" : "none"; });
+  }));
+}
+
+/* standardization list (Experience page) */
+function renderStandards(mountSel) {
+  const m = $(mountSel); if (!m || typeof STANDARDS === "undefined") return;
+  m.innerHTML = STANDARDS.map(d => `
+    <li class="pub reveal is-in">
+      <span class="pub__year">${d.year}</span>
+      <div class="pub__body">
+        <div class="pub__tags">
+          <span class="pub__badge pub__badge--standard">${d.venue}</span>
+          ${d.number ? `<span class="pub__badge pub__badge--status">Doc. ${d.number}</span>` : ""}
+        </div>
+        <p class="pub__title">${d.url ? `<a href="${d.url}" target="_blank" rel="noopener">${d.title}</a>` : d.title}</p>
+        <p class="pub__meta"><span class="pub__authors">${hlAuthors(d.authors)}</span> · ${d.month ? d.month + ". " : ""}${d.year}</p>
+      </div>
+    </li>`).join("");
 }
 
 function renderBio(mountSel) {
@@ -324,6 +373,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderResearch("#homeResearch", 3);
   renderResearch("#allResearch");
   renderProjects("#allProjects");
+  renderProjects("#homeProjects", { status: "ongoing", limit: 3 });
+  projectFilters();
+  renderStandards("#standardsList");
   renderPublications("#homePubs", { limit: 5, filter: p => isQ1(p) && p.authors.startsWith(PROFILE.authorName) });
   renderPublications("#allPubs");
   renderPubStats("#pubStats");

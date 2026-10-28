@@ -11,9 +11,10 @@ GitHub Pages at **https://amirul2k9.github.io**.
 
 ```
 index.html          Home — hero, profile card, stats, bio, research, selected papers
-research.html       Research areas + projects
-publications.html   Filterable, searchable publication list (journals, conferences, IEEE 802)
-cv.html             Positions, education, teaching, standardization
+research.html       Research areas
+projects.html       Ongoing / completed projects with a status filter
+publications.html   Filterable, searchable publication list (journals, conferences)
+cv.html             Positions, education, teaching, IEEE 802.15 contributions
 contact.html        Contact details, map, profile links
 404.html            Friendly "page not found" (catches old Jekyll links)
 .nojekyll           Tells GitHub Pages NOT to run Jekyll
@@ -34,12 +35,21 @@ assets/img/         Photo and favicon
   doi: "10.1109/XXXX.2027.1234567" },
 ```
 
-- `type`: `"journal"`, `"conference"` or `"standard"`
+- `type`: `"journal"` or `"conference"`
 - `status` (optional): `"accepted"`, `"early access"`, `"preprint"`
 - `quartile` (optional): `"Q1"`–`"Q4"`
 - If `doi` is set the title links to the DOI automatically.
 - Your name (`A. Islam`) is bolded automatically.
 - The home-page stats (journal count, Q1 count, IEEE 802 count) update themselves.
+
+**Add or edit a project** — edit `PROJECTS` (newest first). `status` is `"Ongoing"`,
+`"Completed"` or `"Planned"`; the filter buttons on the Projects page appear automatically.
+Ongoing projects (first three) also appear on the home page. Optional fields: `funding`,
+`team`, `image` (e.g. `"assets/img/projects/name.jpg"`), and
+`links: { paper, code, website, slides, video }`. The three entries marked `// DEMO` are
+placeholders — replace their text with real details.
+
+**IEEE 802 contributions** — edit `STANDARDS`; they show on the Experience page.
 
 **Update citations** — change the `1600` in `PROFILE.stats`.
 
