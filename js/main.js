@@ -48,17 +48,21 @@ window.SITE_JS = (function () {
   function counters() {
     const nums = document.querySelectorAll(".stat__num[data-count]");
     if (!nums.length) return;
+    const fmt = n => Math.round(n).toLocaleString("en-US");
     const run = (node) => {
-      const target = parseFloat(node.dataset.count) || 0;
-      const suffix = node.dataset.suffix || "";
-      if (reduce) { node.textContent = target + suffix; return; }
-      node.textContent = "0" + suffix;
+      // target/suffix are read every frame so live data (e.g. Google Scholar)
+      // that arrives mid-animation is picked up
+      const target = () => parseFloat(node.dataset.count) || 0;
+      const suffix = () => node.dataset.suffix || "";
+      if (reduce || !target()) { node.textContent = fmt(target()) + suffix(); return; }
+      node.dataset.animating = "1";
       const dur = 1400, t0 = performance.now();
       const tick = (t) => {
         const k = Math.min(1, (t - t0) / dur);
         const eased = 1 - Math.pow(1 - k, 3);
-        node.textContent = Math.round(target * eased) + suffix;
+        node.textContent = fmt(target() * eased) + suffix();
         if (k < 1) requestAnimationFrame(tick);
+        else delete node.dataset.animating;
       };
       requestAnimationFrame(tick);
     };

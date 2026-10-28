@@ -55,7 +55,7 @@ function mountHeader() {
   const nav = [
     ["index", "index.html", "Home"],
     ["research", "research.html", "Research"],
-    ["publications", "publications.html", "Publications"],     
+    ["publications", "publications.html", "Publications"],
     ["projects", "projects.html", "Projects"],
     ["cv", "cv.html", "Experience"],
     ["contact", "contact.html", "Contact"]
@@ -131,7 +131,65 @@ const pubCount = {
   q1:         () => PUBLICATIONS.filter(isQ1).length,
   all:        () => PUBLICATIONS.length
 };
-const resolveStat = v => (typeof v === "string" && v.startsWith("auto:")) ? pubCount[v.slice(5)]() : v;
+/* ---- Google Scholar metrics ---------------------------------------------
+   Starts with the fallback numbers from data.js, then loadScholar() replaces
+   them with assets/data/scholar.json (written weekly by a GitHub Action). */
+const SCHOLAR = Object.assign({ live: false }, (PROFILE.scholar || {}).fallback || {});
+
+const resolveStat = v => {
+  if (typeof v !== "string") return v;
+  if (v.startsWith("auto:")) return pubCount[v.slice(5)]();
+  if (v.startsWith("scholar:")) return SCHOLAR[v.slice(8)] ?? "";
+  return v;
+};
+const statSuffix = s =>
+  (typeof s.value === "string" && s.value.startsWith("scholar:")) ? (SCHOLAR.live ? "" : "+") : (s.suffix || "");
+const fmt = n => (typeof n === "number" ? n.toLocaleString("en-US") : n);
+
+function scholarMetricsHTML() {
+  const cells = [["Citations", SCHOLAR.citations], ["h-index", SCHOLAR.hindex], ["i10-index", SCHOLAR.i10index]]
+    .filter(([, v]) => v !== null && v !== undefined && v !== "");
+  if (!cells.length) return "";
+  const url = PROFILE.links.scholar || `https://scholar.google.com/citations?user=${PROFILE.scholar.id}`;
+  return `
+    <dl class="pcard__metrics">
+      ${cells.map(([k, v]) => `<div><dt>${k}</dt><dd>${fmt(v)}${!SCHOLAR.live && k === "Citations" ? "+" : ""}</dd></div>`).join("")}
+    </dl>
+    <a class="pcard__src" href="${url}" target="_blank" rel="noopener">Google Scholar${SCHOLAR.live && SCHOLAR.updated ? ` · updated ${SCHOLAR.updated}` : ""} ↗</a>`;
+}
+
+function applyScholar() {
+  $$("[data-scholar-stat]").forEach(n => {
+    const s = PROFILE.stats[+n.dataset.scholarStat];
+    const v = resolveStat(s.value), suf = statSuffix(s);
+    n.dataset.count = v; n.dataset.suffix = suf;
+    if (!n.dataset.animating) n.textContent = fmt(v) + suf;
+  });
+  const box = $("#scholarMetrics");
+  if (box) box.innerHTML = scholarMetricsHTML();
+}
+
+async function loadScholar() {
+  const cfg = PROFILE.scholar; if (!cfg) return;
+  const day = new Date().toISOString().slice(0, 10);
+  const urls = [
+    cfg.repo ? `https://raw.githubusercontent.com/${cfg.repo}/${cfg.branch || "main"}/assets/data/scholar.json?d=${day}` : null,
+    `assets/data/scholar.json?d=${day}`
+  ].filter(Boolean);
+  for (const url of urls) {
+    try {
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 5000);
+      const r = await fetch(url, { signal: ctrl.signal, cache: "no-cache" });
+      clearTimeout(t);
+      if (!r.ok) continue;
+      const d = await r.json();
+      if (!d || !d.citations) continue;
+      Object.assign(SCHOLAR, d, { live: true });
+      applyScholar();
+      return;
+    } catch (e) { /* try the next source */ }
+  }
+}
 
 function pubDetails(p) {
   const parts = [];
@@ -178,21 +236,28 @@ function renderPublications(mountSel, opts = {}) {
 
 function renderPubStats(mountSel) {
   const m = $(mountSel); if (!m) return;
+  // citations come from the "Citations" entry in PROFILE.stats
+  const cs = PROFILE.stats.find(s => /citation/i.test(s.label));
+  const cv = cs ? resolveStat(cs.value) : 0;
+  const csuf = cs ? (typeof statSuffix === "function" ? statSuffix(cs) : (cs.suffix || "")) : "";
+  const k = n => n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(n);
   const cells = [
+    [pubCount.all(), "Total"],
     [pubCount.journal(), "Journals"],
-    [pubCount.q1(), "Q1 journals"],
+    [pubCount.q1(), "Q1 Journals"],
     [pubCount.conference(), "Conferences"],
-    [pubCount.all(), "Total"]
+    [cv ? k(cv) + csuf : "—", "Citations", "pubstats__cell--wide"]
   ];
-  m.innerHTML = cells.map(([n, l]) => `<div class="pubstats__cell"><b>${n}</b><span>${l}</span></div>`).join("");
+  m.innerHTML = cells.map(([n, l, cls]) =>
+    `<div class="pubstats__cell ${cls || ""}"><b>${n}</b><span>${l}</span></div>`).join("");
 }
 
 /* ---- other renderers ------------------------------------------------------ */
 function renderStats(mountSel) {
   const m = $(mountSel); if (!m) return;
-  m.innerHTML = PROFILE.stats.map(s => `
+  m.innerHTML = PROFILE.stats.map((s, i) => `
     <div class="stat reveal">
-      <div class="stat__num" data-count="${resolveStat(s.value)}" data-suffix="${s.suffix || ""}">${resolveStat(s.value)}${s.suffix || ""}</div>
+      <div class="stat__num" data-count="${resolveStat(s.value)}" data-suffix="${statSuffix(s)}"${typeof s.value === "string" && s.value.startsWith("scholar:") ? ` data-scholar-stat="${i}"` : ""}>${fmt(resolveStat(s.value))}${statSuffix(s)}</div>
       <div class="stat__label">${s.label}</div>
     </div>`).join("");
 }
@@ -324,6 +389,7 @@ function renderProfileCard(mountSel) {
         <div><dt>Room</dt><dd>${PROFILE.room}</dd></div>
         <div><dt>Ext</dt><dd>${PROFILE.ext}</dd></div>
       </dl>
+      <div id="scholarMetrics">${scholarMetricsHTML()}</div>
       <a class="pcard__mail" href="mailto:${PROFILE.email}">${PROFILE.email}</a>
       <div class="tcard__icons">${linkBadges()}</div>
     </div>`;
@@ -388,4 +454,5 @@ document.addEventListener("DOMContentLoaded", () => {
   $$("[data-count-of]").forEach(n => { n.textContent = pubCount[n.dataset.countOf](); });
 
   window.SITE_JS && window.SITE_JS.init();
+  loadScholar();
 });
