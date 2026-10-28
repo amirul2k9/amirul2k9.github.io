@@ -1,8 +1,7 @@
 # Amirul Islam — personal website
 
 Personal academic site for **Dr. Amirul Islam**, Assistant Professor, Department of EEE,
-BSRM School of Engineering, BRAC University. Built in the same "signal-domain" design
-system as the [C2NS research cluster site](https://communicationlab.github.io/research/).
+BSRM School of Engineering, BRAC University.
 
 Plain HTML, CSS and JavaScript — no build step, no Jekyll — so it runs directly on
 GitHub Pages at **https://amirul2k9.github.io**.
