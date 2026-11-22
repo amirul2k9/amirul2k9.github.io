@@ -57,7 +57,7 @@ const PROFILE = {
   // Headline numbers. "auto:*" values are counted from PUBLICATIONS below,
   // so they stay correct as you add papers. Update citations by hand.
   stats: [
-    { value: 1600,               suffix: "+", label: "Citations (Google Scholar)" },
+    { value: 1700,               suffix: "+", label: "Citations (Google Scholar)" },
     { value: "auto:journal",     suffix: "",  label: "Journal articles" },
     { value: "auto:q1",          suffix: "",  label: "Q1 journal papers" },
     { value: "auto:standard",    suffix: "",  label: "IEEE 802 contributions" }
@@ -239,6 +239,7 @@ const PUBLICATIONS = [
   { year: 2016, month: "Feb", type: "journal", quartile: "Q4", domestic: true, authors: "M. A. Hossain, N. T. Le, A. Islam, C. H. Hong, Y. M. Jang", title: "Invisible Watermarking Based Optical Wireless Communications", venue: "Journal of Korean Institute of Communications and Information Sciences", volume: "41", issue: "2", pages: "198-205", doi: "10.7840/kics.2016.41.2.198" },
 
   /* ---- Conferences ---- */
+  { year: 2027, month: "Jan", type: "conference", status: "accepted", authors: "R. Uddin, A. R. Sagor, A. Islam, A. S. N. Huda, M. R. Hazari, C. A. Hossain, S. Ahmad", title: "Joint Fault Classification and Islanding Detection in Renewable DC/AC Nanogrids under Operating-Point Variations", venue: "5th International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST)", pages: "1-6", location: "Dhaka, Bangladesh" },
   { year: 2026, month: "Jan", type: "conference", authors: "A. S. Sukanna, S. Mahmood, S. A. Trina, A. Islam", title: "A Dual-Recurrent Attention Architecture for High-Recall Sentiment Analysis in Noisy Twitter Texts", venue: "5th International Conference on Electrical, Computer & Telecommunication Engineering", pages: "1-6", location: "Rajshahi, Bangladesh", doi: "10.1109/ICECTE69292.2026.11429206" },
   { year: 2026, month: "Jan", type: "conference", authors: "S. Mahmood, S. A. Trina, M. S. Ahmed, A. Islam", title: "Energy-Regularized Bidirectional Recurrent Attention Networks with Contrastive Confidence Modeling for Lightweight and Explainable Sentiment Classification", venue: "5th International Conference on Electrical, Computer & Telecommunication Engineering", pages: "1-6", location: "Rajshahi, Bangladesh", doi: "10.1109/ICECTE69292.2026.11429196", url: "10.1109/ICECTE69292.2026.11429196" },
   { year: 2025, month: "Dec", type: "conference", authors: "Sauda, M. N. Khan, B. C. Biddut, H. B. Nishan, A. Islam", title: "Dual-Mode Automated Cleaning System for Enhanced Solar Panel System Efficiency", venue: "28th International Conference on Computer and Information Technology (ICCIT)", pages: "1004-1009", location: "Cox's Bazar, Bangladesh", doi: "10.1109/ICCIT68739.2025.11491220" },
