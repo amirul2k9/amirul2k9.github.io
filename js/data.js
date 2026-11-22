@@ -19,7 +19,7 @@ const PROFILE = {
   role:      "Assistant Professor",
   dept:      "Department of Electrical and Electronic Engineering",
   school:    "BSRM School of Engineering, BRAC University",
-  photo:     "assets/img/amirul.jpg",
+  photo:     "assets/img/1751365884.jpg",
   room:      "4E23",
   ext:       "1841",
   email:     "amirul.islam@bracu.ac.bd",
